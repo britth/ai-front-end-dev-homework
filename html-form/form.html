@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Forms</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="form.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form</h1>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+      </div>
+
+      <hr />
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <!-- <h1>Forms</h1> -->
+          <form action="http://www.google.com" name="my-form" class="my-form-class">
+            <label>Type a number (probably 5):</label>
+            <input type="text" name="some-text-field" />
+            <br />
+
+            <label>Select One (I'd go with 'Frogs'):</label>
+            <label><input type="radio" name="some-radio-flyers" value="Frogs" />Frogs</label>
+            <label><input type="radio" name="some-radio-flyers" value="Llamas" />Llamas</label>
+            <label><input type="radio" name="some-radio-flyers" value="Dolphins" />Dolphins</label>
+            <br />
+
+            <label>A select:</label>
+            <select name="the-select">
+              <option value="default">- Select one -</option>
+              <option value="foo">Foo</option>
+              <option value="bar">Bar</option>
+            </select>
+            <br />
+
+            <label>Have you entered everything?:</label>
+            <label><input type="checkbox" name="some-checkbox" class="no-i-want-a-classname" />Yes</label>
+            <br />
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
