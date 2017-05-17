@@ -1,5 +1,4 @@
 
-/* Let's make this form a little less ugly */
 html {
   font-size: 16px;
 }
@@ -7,4 +6,68 @@ body {
     margin: 0;
     padding: 1em;
     font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', sans-serif;
+}
+
+.target {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+/**
+ * Hover transition
+ */
+
+/*.example {
+    transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+}*/
+
+.example-1 {
+  height: 100px;
+  width: 100px;
+  background: #CCC;
+  transition: all 1s cubic-bezier(0, 1.08, 0.74, 0.21) 1s;
+}
+
+.example-1:hover {
+  background: blue;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+/**
+ * Animation with keyframes
+ */
+
+/*.example {
+    animation:
+      [animation-name]
+      [animation-duration]
+      [animation-timing-function]
+      [animation-delay]
+      [animation-direction]
+      [animation-iteration-count]
+      [animation-fill-mode]
+      [animation-play-state];
+}*/
+.example-2 {
+  height: 25px;
+  width: 500px;
+  top: 50%;
+  position: absolute;
+  font-size: 20px;
+  animation: slideAcross 5s infinite normal linear;
+}
+
+@keyframes slideAcross {
+    0% {
+        left:0;
+    }
+    50% {
+        left: 40%;
+    }
+    100% {
+        left: 80%;
+    }
 }

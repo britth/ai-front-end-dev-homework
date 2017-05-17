@@ -4,20 +4,49 @@ $(function() {
 var position = 0
 var userId = 1
 
+  var getUserInfo = function(userId) {
+    $.ajax({
+      url: 'https://jsonplaceholder.typicode.com/users?userId=' + userId,
+      method: 'GET',
+    }).then(function(data) {
+
+      if (typeof data[userId] === "undefined") {
+        $('.target-2').html('user unknown'),
+        $('.target-3').html('')
+      } else {
+        console.log(data[userId]),
+        console.log(data[userId]["name"]),
+        console.log(data[userId]["username"]),
+        console.log(data[userId]["email"]),
+        $('.target-2').html(data[userId]["name"] + ' (' + data[userId]["username"] + ')'),
+        $('.target-3').html(data[userId]["email"])
+      }
+
+    }).catch(function(err) {
+      // try bad endpoint, see an error
+      console.log('we got an error!');
+      console.log(err);
+    });
+
+  };
+
   var makeAnotherRequest = function() {
     $.ajax({
       url: 'https://jsonplaceholder.typicode.com/posts?userId=' + userId,
       method: 'GET',
     }).then(function(data) {
 
-      if (position < data.length - 1){
+      if (position < data.length - 1) {
         console.log(data[position]["body"]);
         $('.target').html(data[position]["body"]);
+        getUserInfo(userId)
+        $('.example-2').html('');
         position = position + 1;
       } else {
         position = 0;
         userId = userId + 1;
-        console.log('going to next user: ', userId);
+        $('.example-2').html('Last post by this user')
+        console.log('last post for this user: ', userId);
       }
 
     }).catch(function(err) {
