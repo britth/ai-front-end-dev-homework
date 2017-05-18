@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Robot</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <style type="text/css">
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', sans-serif;
+         font-size: 16px;
+      }
+
+      div {
+        width: 50%;
+      }
+
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
+      }
+
+      .triangle-up {
+      	width: 0;
+      	height: 0;
+        top: 0;
+      	border-left: 25px solid transparent;
+      	border-right: 25px solid transparent;
+      	border-bottom: 100px solid gray;
+      }
+
+      .small-circle {
+      	width: 25px;
+      	height: 25px;
+      	background: black;
+      	-moz-border-radius: 50px;
+      	-webkit-border-radius: 50px;
+      	border-radius: 50px;
+      }
+
+      .big-circle {
+      	width: 125px;
+      	height: 125px;
+      	background: gray;
+      	-moz-border-radius: 50px;
+      	-webkit-border-radius: 50px;
+      	border-radius: 50px;
+      }
+
+      .pink-circle {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background: mediumvioletred;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+      }
+
+      .oval {
+      	width: 200px;
+      	height: 100px;
+        position: absolute;
+      	background: gray;
+      	-moz-border-radius: 100px / 50px;
+      	-webkit-border-radius: 100px / 50px;
+      	border-radius: 100px / 50px;
+      }
+
+      .mouth-rectangle {
+      	width: 80px;
+      	height: 20px;
+      	background: mediumvioletred;
+      }
+
+      .teeth-rectangle {
+        width: 60px;
+        height: 10px;
+        background: white;
+      }
+
+      .neck {
+        width: 25px;
+        height: 100px;
+        background: gray;
+      }
+
+      .body-rectangle {
+        width: 175px;
+        height: 200px;
+        background: gray;
+      }
+
+      .arm-rectangle {
+        width: 300px;
+        height: 25px;
+        background: gray;
+      }
+
+      .pos-left {
+        position: absolute;
+        top: 25px;
+        right: -50px;
+      }
+
+      .pos-right {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+      }
+
+      .pos-above {
+        position: absolute;
+        top: -75px;
+        left: 35%;
+      }
+
+      .pos-bottom {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+      }
+
+      .pos-bottom-middle {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+      }
+
+      .below-head {
+        position: absolute;
+        top: 90px;
+        left: 90px;
+      }
+
+      .on-body {
+        position: absolute;
+        top: 40px;
+        left: -75px;
+      }
+
+      .below-body {
+        position: absolute;
+        top: 250%;
+        left: 20%;
+      }
+
+      .arm-position {
+        position: absolute;
+        top: 25px;
+        left: -125%;
+      }
+
+      .antenna-top {
+        position: absolute;
+        left: 15%
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      <div class="oval">
+        <div class="pos-above">
+          <div class="triangle-up">
+            <div class="antenna-top"><div class="pink-circle"></div></div>
+          </div>
+        </div>
+        <div class="pos-right">
+          <div class="small-circle"></div>
+        </div>
+        <div class="pos-left">
+          <div class="small-circle"></div>
+        </div>
+        <div class="pos-bottom">
+          <div class="mouth-rectangle">
+            <div class="pos-bottom-middle">
+              <div class="teeth-rectangle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="below-head">
+          <div class="neck">
+            <div class="on-body">
+              <div class="arm-position">
+                <div class="arm-rectangle"></div>
+              </div>
+              <div class="body-rectangle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="below-body">
+          <div class="big-circle"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
