@@ -4,22 +4,22 @@ $(function() {
 var position = 0
 var userId = 1
 
-  var getUserInfo = function(userId) {
+  var getUserInfo = function() {
     $.ajax({
-      url: 'https://jsonplaceholder.typicode.com/users?userId=' + userId,
+      url: 'https://jsonplaceholder.typicode.com/users',
       method: 'GET',
     }).then(function(data) {
-
-      if (typeof data[userId] === "undefined") {
-        $('.target-2').html('user unknown'),
-        $('.target-3').html('')
+      var userArrayPosition = userId - 1
+      if (typeof data[userArrayPosition] === "undefined") {
+        $('.target-2').html('user unknown');
+        $('.target-3').html('');
       } else {
-        console.log(data[userId]),
-        console.log(data[userId]["name"]),
-        console.log(data[userId]["username"]),
-        console.log(data[userId]["email"]),
-        $('.target-2').html(data[userId]["name"] + ' (' + data[userId]["username"] + ')'),
-        $('.target-3').html(data[userId]["email"])
+        console.log(data[userArrayPosition]["id"]);
+        console.log(data[userArrayPosition]["name"]);
+        console.log(data[userArrayPosition]["username"]);
+        console.log(data[userArrayPosition]["email"]);
+        $('.target-2').html(data[userArrayPosition]["name"] + ' (' + data[userArrayPosition]["username"] + ')');
+        $('.target-3').html(data[userArrayPosition]["email"]);
       }
 
     }).catch(function(err) {
@@ -37,16 +37,17 @@ var userId = 1
     }).then(function(data) {
 
       if (position < data.length - 1) {
-        console.log(data[position]["body"]);
+        console.log(data[position]["body"] + ' (userId: ' + data[position]["userId"] + ')');
         $('.target').html(data[position]["body"]);
-        getUserInfo(userId)
+        getUserInfo();
         $('.example-2').html('');
         position = position + 1;
-      } else {
+      }
+       else {
+        $('.example-2').html('Last post by this user');
+        console.log('last post for this user: ', userId);
         position = 0;
         userId = userId + 1;
-        $('.example-2').html('Last post by this user')
-        console.log('last post for this user: ', userId);
       }
 
     }).catch(function(err) {
